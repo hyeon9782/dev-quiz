@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import NotFoundPage from "../pages/NotFoundPage";
-import MainPage from "../pages/MainPage";
-import RoomsPage from "../pages/RoomsPage";
-import RoomPage from "../pages/RoomPage";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import MainPage from "../pages/MainPage/MainPage";
+import RoomsPage from "../pages/RoomsPage/RoomsPage";
+import RoomPage from "../pages/RoomPage/RoomPage";
+import IntroPage from "../pages/IntroPage/IntroPage";
 
 const AppRouter = () => {
   const router = createBrowserRouter([
@@ -18,6 +19,14 @@ const AppRouter = () => {
           element: (
             <Suspense fallback={<div>Loading...</div>}>
               <MainPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/intro",
+          element: (
+            <Suspense fallback={<div>Loading...</div>}>
+              <IntroPage />
             </Suspense>
           ),
         },
