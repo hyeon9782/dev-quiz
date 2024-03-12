@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
 export const containerStyle = css({
-  width: "600px",
+  width: "100%",
   margin: "0 auto",
 });

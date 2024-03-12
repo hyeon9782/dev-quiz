@@ -18,15 +18,15 @@ const AppRouter = () => {
           path: "",
           element: (
             <Suspense fallback={<div>Loading...</div>}>
-              <MainPage />
+              <IntroPage />
             </Suspense>
           ),
         },
         {
-          path: "/intro",
+          path: "/main",
           element: (
             <Suspense fallback={<div>Loading...</div>}>
-              <IntroPage />
+              <MainPage />
             </Suspense>
           ),
         },
