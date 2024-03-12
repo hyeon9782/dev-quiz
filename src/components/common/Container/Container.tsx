@@ -2,7 +2,7 @@ import { containerStyle } from "./Container.style";
 import { PropsWithChildren } from "react";
 
 const Container = ({ children }: PropsWithChildren) => {
-  return <div css={containerStyle}>{children}</div>;
+  return <main css={containerStyle}>{children}</main>;
 };
 
 export default Container;

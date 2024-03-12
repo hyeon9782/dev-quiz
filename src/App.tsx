@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import { Global, css } from "@emotion/react";
 
 function App() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <Global
+        styles={css`
+          body {
+            margin: 0;
+            min-height: 100vh;
+          }
+        `}
+      />
+      <Outlet />
     </>
   );
 }
