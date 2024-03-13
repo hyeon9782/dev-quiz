@@ -5,6 +5,7 @@ import SearchBar from "../../components/room/SearchBar/SearchBar";
 import { roomListStyle } from "./RoomsPage.style";
 import CreateButton from "../../components/room/CreateButton/CreateButton";
 import Modal from "../../components/common/Modal/Modal";
+import CreateForm from "../../components/room/CreateForm/CreateForm";
 
 const list = [
   {
@@ -61,7 +62,8 @@ const RoomsPage = () => {
         </div>
       </Container>
       <Modal isOpen={isOpen} onClose={handleClose}>
-        <div>Modal</div>
+        <h1>방 만들기</h1>
+        <CreateForm />
       </Modal>
     </>
   );
