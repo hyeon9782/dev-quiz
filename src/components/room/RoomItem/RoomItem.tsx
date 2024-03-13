@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   badgeBoxStyle,
   badgeStyle,
@@ -22,6 +23,7 @@ type RoomItemProps = {
 
 const RoomItem = ({ room }: RoomItemProps) => {
   const {
+    id,
     title,
     quizType,
     roomType,
@@ -30,8 +32,12 @@ const RoomItem = ({ room }: RoomItemProps) => {
     quizPersonnel,
     quizStatus,
   } = room;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/room/${id}`);
+  };
   return (
-    <div css={roomItemStyle}>
+    <div css={roomItemStyle} onClick={handleClick}>
       <div css={titleStyle}>{title}</div>
       <div css={badgeBoxStyle}>
         <div css={badgeStyle}>{quizType}</div>

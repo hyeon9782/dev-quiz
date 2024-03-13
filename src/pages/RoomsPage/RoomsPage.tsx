@@ -1,6 +1,10 @@
+import { useState } from "react";
 import Container from "../../components/common/Container/Container";
 import RoomItem from "../../components/room/RoomItem/RoomItem";
+import SearchBar from "../../components/room/SearchBar/SearchBar";
 import { roomListStyle } from "./RoomsPage.style";
+import CreateButton from "../../components/room/CreateButton/CreateButton";
+import Modal from "../../components/common/Modal/Modal";
 
 const list = [
   {
@@ -42,14 +46,24 @@ const list = [
 ];
 
 const RoomsPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
   return (
-    <Container>
-      <div css={roomListStyle}>
-        {list.map((item) => (
-          <RoomItem room={item} key={item.id} />
-        ))}
-      </div>
-    </Container>
+    <>
+      <Container>
+        <CreateButton onOpen={handleOpen} />
+        <SearchBar />
+        <div css={roomListStyle}>
+          {list.map((item) => (
+            <RoomItem room={item} key={item.id} />
+          ))}
+        </div>
+      </Container>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <div>Modal</div>
+      </Modal>
+    </>
   );
 };
 
