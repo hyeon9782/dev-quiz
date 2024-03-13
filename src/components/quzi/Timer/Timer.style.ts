@@ -25,7 +25,7 @@ const shake = keyframes`
 
 export const timerBoxStyle = css({
   position: "relative",
-  width: "400px",
+  width: "95%",
   height: "30px",
   backgroundColor: "blue",
   borderRadius: "10px 0 0 10px",
@@ -47,7 +47,7 @@ export const clockStyle = css({
   right: "-25px",
   fontSize: "3rem",
   color: "black",
-  backgroundColor: "lightgray",
+  backgroundColor: "gray",
   padding: "5px",
   borderRadius: "9999px",
   display: "flex",

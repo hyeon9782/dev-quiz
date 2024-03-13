@@ -1,6 +1,6 @@
 import Container from "../../components/common/Container/Container";
 import Header from "../../components/common/Header/Header";
-import Timer from "../../components/quzi/Timer/Timer";
+import QuziBox from "../../components/quzi/QuziBox/QuziBox";
 import { containerStyle } from "./PracticePage.style";
 
 const PracticePage = () => {
@@ -8,7 +8,7 @@ const PracticePage = () => {
     <Container>
       <div css={containerStyle}>
         <Header>연습하기</Header>
-        <Timer />
+        <QuziBox />
       </div>
     </Container>
   );
