@@ -5,7 +5,7 @@ const progress = keyframes`
   100% { width: 0 }
 `;
 
-const shake = keyframes`
+export const shake = keyframes`
    0% {
     transform: rotate(0deg);
   }

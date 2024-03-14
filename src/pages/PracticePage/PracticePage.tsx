@@ -3,6 +3,7 @@ import ChatInput from "../../components/chat/ChatInput/ChatInput";
 import Container from "../../components/common/Container/Container";
 import Header from "../../components/common/Header/Header";
 import QuziBox from "../../components/quzi/QuziBox/QuziBox";
+import Result from "../../components/quzi/Result/Result";
 import { containerStyle } from "./PracticePage.style";
 
 const PracticePage = () => {
@@ -13,6 +14,7 @@ const PracticePage = () => {
         <QuziBox />
         <ChatDisplay />
         <ChatInput />
+        <Result result={false} />
       </div>
     </Container>
   );
