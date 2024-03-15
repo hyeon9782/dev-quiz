@@ -7,6 +7,7 @@ import RoomsPage from "../pages/RoomsPage/RoomsPage";
 import RoomPage from "../pages/RoomPage/RoomPage";
 import IntroPage from "../pages/IntroPage/IntroPage";
 import PracticePage from "../pages/PracticePage/PracticePage";
+import CreatePage from "../pages/CreatePage/CreatePage";
 
 const AppRouter = () => {
   const router = createBrowserRouter([
@@ -52,6 +53,14 @@ const AppRouter = () => {
           element: (
             <Suspense fallback={<div>Loading...</div>}>
               <RoomPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/create",
+          element: (
+            <Suspense fallback={<div>Loading...</div>}>
+              <CreatePage />
             </Suspense>
           ),
         },

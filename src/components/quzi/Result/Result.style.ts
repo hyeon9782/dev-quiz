@@ -27,8 +27,15 @@ export const resultStyle = css({
 });
 
 export const resultIconStyle = css({
-  fontSize: "30rem",
   color: "gray",
   transformOrigin: "50% 50%",
   animation: `${flipScale} 0.5s linear both`,
+});
+
+export const closeStyle = css({
+  fontSize: "30rem",
+});
+
+export const circleStyle = css({
+  fontSize: "20rem",
 });

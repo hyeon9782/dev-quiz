@@ -14,7 +14,7 @@ const PracticePage = () => {
         <QuziBox />
         <ChatDisplay />
         <ChatInput />
-        <Result result={false} />
+        <Result result={true} />
       </div>
     </Container>
   );
