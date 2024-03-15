@@ -64,7 +64,6 @@ const TabsTrigger = ({
   );
 };
 
-// 추후에 비교값에 따른 display:none으로 변경
 const TabsContent = ({
   children,
   value,

@@ -5,7 +5,7 @@ import SearchBar from "../../components/room/SearchBar/SearchBar";
 import { roomListStyle } from "./RoomsPage.style";
 import CreateButton from "../../components/room/CreateButton/CreateButton";
 import Modal from "../../components/common/Modal/Modal";
-import CreateForm from "../../components/room/CreateForm/CreateForm";
+import CreateForm from "../../components/room/CreateRoomForm/CreateRommForm";
 
 const list = [
   {
