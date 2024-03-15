@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import {
-  buttonBox,
   loginModalStyle,
   previewStyle,
   startButtonStyle,
@@ -21,7 +20,7 @@ const StartButton = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <div css={loginModalStyle}>
           <KakaoButton />
-          <div css={previewStyle} onClick={() => navigate("/room")}>
+          <div css={previewStyle} onClick={() => navigate("/main")}>
             체험하기
           </div>
         </div>

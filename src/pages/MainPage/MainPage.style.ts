@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 export const containerStyle = css({
-  width: "800px",
+  width: "1200px",
 });
 
 export const titleStyle = css({
@@ -16,6 +16,7 @@ export const listStyle = css({
 });
 
 export const cardStyle = css({
+  border: "none",
   borderRadius: "15px",
   backgroundColor: "lightgray",
   fontSize: "3rem",
