@@ -4,10 +4,11 @@ import App from "../App";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import MainPage from "../pages/MainPage/MainPage";
 import RoomsPage from "../pages/RoomsPage/RoomsPage";
-import RoomPage from "../pages/RoomPage/RoomPage";
 import IntroPage from "../pages/IntroPage/IntroPage";
 import PracticePage from "../pages/PracticePage/PracticePage";
 import CreatePage from "../pages/CreatePage/CreatePage";
+import GameRoomPage from "../pages/GameRoomPage/GameRoomPage";
+import WaitingRoomPage from "../pages/WaitingRoomPage/WaitingRoomPage";
 
 const AppRouter = () => {
   const router = createBrowserRouter([
@@ -49,10 +50,18 @@ const AppRouter = () => {
           ),
         },
         {
-          path: "/room/:roomId",
+          path: "/room/waiting/:roomId",
           element: (
             <Suspense fallback={<div>Loading...</div>}>
-              <RoomPage />
+              <WaitingRoomPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/room/game/:roomId",
+          element: (
+            <Suspense fallback={<div>Loading...</div>}>
+              <GameRoomPage />
             </Suspense>
           ),
         },

@@ -1,11 +1,12 @@
+import { useNavigate, useParams } from "react-router-dom";
 import ChatDisplay from "../../components/chat/ChatDisplay/ChatDisplay";
 import ChatInput from "../../components/chat/ChatInput/ChatInput";
 import Container from "../../components/layout/Container/Container";
 import Header from "../../components/layout/Header/Header";
 import UserBox from "../../components/room/UserBox/UserBox";
-import { userListStyle } from "./RoomPage.style";
+import { userListStyle } from "./WaitingRoomPage.style";
 
-const users = [
+export const users = [
   {
     id: 0,
     name: "현정호",
@@ -48,7 +49,9 @@ const users = [
   },
 ];
 
-const RoomPage = () => {
+const WaitingRoomPage = () => {
+  const navigate = useNavigate();
+  const { roomId } = useParams();
   return (
     <Container>
       <Header>자바스크립트 개고수만 오셈</Header>
@@ -57,10 +60,15 @@ const RoomPage = () => {
           <UserBox key={user.id} user={user} />
         ))}
       </div>
+      <div>
+        <button onClick={() => navigate(`/room/game/${roomId}`)}>
+          시작하기
+        </button>
+      </div>
       <ChatDisplay />
       <ChatInput />
     </Container>
   );
 };
 
-export default RoomPage;
+export default WaitingRoomPage;

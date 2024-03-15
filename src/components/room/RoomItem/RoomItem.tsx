@@ -34,7 +34,7 @@ const RoomItem = ({ room }: RoomItemProps) => {
   } = room;
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/room/${id}`);
+    navigate(`/room/waiting/${id}`);
   };
   return (
     <div css={roomItemStyle} onClick={handleClick}>
