@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Container from "../../components/layout/Container/Container";
 import RoomItem from "../../components/room/RoomItem/RoomItem";
 import SearchBar from "../../components/room/SearchBar/SearchBar";
@@ -6,6 +5,8 @@ import { roomListStyle } from "./RoomsPage.style";
 import CreateButton from "../../components/room/CreateButton/CreateButton";
 import Modal from "../../components/common/Modal/Modal";
 import CreateForm from "../../components/room/CreateRoomForm/CreateRommForm";
+import useModal from "../../hooks/useModal";
+import Header from "../../components/layout/Header/Header";
 
 const list = [
   {
@@ -47,21 +48,26 @@ const list = [
 ];
 
 const RoomsPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleOpen = () => setIsOpen(true);
-  const handleClose = () => setIsOpen(false);
+  const {
+    isOpen: createModalOpen,
+    onOpen: onCreateModalOpen,
+    onClose: onCreateModalClose,
+  } = useModal();
+
   return (
     <>
       <Container>
-        <CreateButton onOpen={handleOpen} />
+        <Header>Rooms</Header>
+        <CreateButton onOpen={onCreateModalOpen} />
         <SearchBar />
+
         <div css={roomListStyle}>
           {list.map((item) => (
             <RoomItem room={item} key={item.id} />
           ))}
         </div>
       </Container>
-      <Modal isOpen={isOpen} onClose={handleClose}>
+      <Modal isOpen={createModalOpen} onClose={onCreateModalClose}>
         <h1>방 만들기</h1>
         <CreateForm />
       </Modal>
