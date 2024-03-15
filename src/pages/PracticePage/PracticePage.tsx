@@ -1,7 +1,8 @@
 import ChatDisplay from "../../components/chat/ChatDisplay/ChatDisplay";
 import ChatInput from "../../components/chat/ChatInput/ChatInput";
-import Container from "../../components/common/Container/Container";
-import Header from "../../components/common/Header/Header";
+import Container from "../../components/layout/Container/Container";
+import Header from "../../components/layout/Header/Header";
+
 import QuziBox from "../../components/quzi/QuziBox/QuziBox";
 import Result from "../../components/quzi/Result/Result";
 import { containerStyle } from "./PracticePage.style";

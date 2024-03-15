@@ -1,8 +1,9 @@
-import Container from "../../components/common/Container/Container";
-import Header from "../../components/common/Header/Header";
+import Container from "../../components/layout/Container/Container";
+
 import Tabs from "../../components/common/Tabs/Tabs";
 import MultipleChoiceForm from "../../components/create/MultipleChoiceForm/MultipleChoiceForm";
 import ShortAnswerForm from "../../components/create/ShortAnswerForm/ShortAnswerForm";
+import Header from "../../components/layout/Header/Header";
 
 const CreatePage = () => {
   return (

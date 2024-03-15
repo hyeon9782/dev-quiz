@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Container from "../../components/common/Container/Container";
+import Container from "../../components/layout/Container/Container";
 import RoomItem from "../../components/room/RoomItem/RoomItem";
 import SearchBar from "../../components/room/SearchBar/SearchBar";
 import { roomListStyle } from "./RoomsPage.style";

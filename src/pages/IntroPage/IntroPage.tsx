@@ -1,4 +1,4 @@
-import Container from "../../components/common/Container/Container";
+import Container from "../../components/layout/Container/Container";
 import StartButton from "../../components/intro/StartButton/StartButton";
 import { descriptionStyle, titleStyle } from "./IntroPage.style";
 

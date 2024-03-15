@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Container from "../../components/common/Container/Container";
+import Container from "../../components/layout/Container/Container";
 import {
   cardStyle,
   containerStyle,
