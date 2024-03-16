@@ -9,6 +9,7 @@ import {
 } from "./MainPage.style";
 import { supabase } from "../../libs/supabase";
 import SignOutButton from "../../components/auth/SignOutButton/SignOutButton";
+import Header from "../../components/layout/Header/Header";
 
 // 추후에 디자인 시스템 Card 컴포넌트로 전환
 const MainPage = () => {
@@ -34,6 +35,7 @@ const MainPage = () => {
   return (
     <Container>
       <div css={containerStyle}>
+        <Header />
         <h1 css={titleStyle}>환영합니다! {isLogin ? user : "게스트"}님!</h1>
         <SignOutButton />
         <div css={listStyle}>
