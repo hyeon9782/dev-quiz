@@ -3,6 +3,7 @@ import ChatInput from "../../components/chat/ChatInput/ChatInput";
 import Container from "../../components/layout/Container/Container";
 import Header from "../../components/layout/Header/Header";
 import QuestionTypeSelector from "../../components/practice/QuestionTypeSelector/QuestionTypeSelector";
+import TopicSelector from "../../components/practice/TopicSelector/TopicSelector";
 
 import QuziBox from "../../components/quzi/QuziBox/QuziBox";
 import Result from "../../components/quzi/Result/Result";
@@ -13,7 +14,8 @@ const PracticePage = () => {
     <Container>
       <div css={containerStyle}>
         <Header>연습하기</Header>
-        <QuestionTypeSelector />
+        {/* <QuestionTypeSelector /> */}
+        <TopicSelector />
         {/* <QuziBox />
         <ChatDisplay />
         <ChatInput />
