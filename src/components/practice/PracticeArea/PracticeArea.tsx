@@ -9,7 +9,7 @@ const PracticeArea = () => {
       <QuziBox />
       <ChatDisplay />
       <ChatInput />
-      <Result result={true} />
+      {/* <Result result={true} /> */}
     </div>
   );
 };

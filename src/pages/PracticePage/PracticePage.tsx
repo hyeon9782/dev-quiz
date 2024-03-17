@@ -8,6 +8,7 @@ import TopicSelector from "../../components/practice/TopicSelector/TopicSelector
 import { containerStyle } from "./PracticePage.style";
 import { useNavigate } from "react-router-dom";
 import PracticeArea from "../../components/practice/PracticeArea/PracticeArea";
+import useCustomBack from "../../hooks/useCustomBack";
 
 type Step = "주제" | "문제유형" | "연습";
 
@@ -18,6 +19,7 @@ type SelectData = {
 
 const PracticePage = () => {
   const navigate = useNavigate();
+
   const [step, setStep] = useState<Step>("주제");
   const [selectedData, setSelectedData] = useState<SelectData>({
     topic: "",
@@ -36,8 +38,12 @@ const PracticePage = () => {
   };
 
   const prevStep = () => {
+    console.log("prev");
+
     switch (step) {
       case "주제":
+        console.log("뒤로가라");
+
         navigate(-1);
         break;
       case "문제유형":
@@ -57,6 +63,8 @@ const PracticePage = () => {
 
     nextStep();
   };
+
+  useCustomBack({ customBack: prevStep });
   return (
     <Container>
       <div css={containerStyle}>
