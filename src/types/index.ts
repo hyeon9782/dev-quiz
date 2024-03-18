@@ -12,4 +12,8 @@ export type Room = {
   password: string;
 };
 
-export type Message = {};
+export type Message = {
+  id: number;
+  username: string;
+  text: string;
+};

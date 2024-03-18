@@ -1,12 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import ChatDisplay from "../../components/chat/ChatDisplay/ChatDisplay";
-import ChatInput from "../../components/chat/ChatInput/ChatInput";
 import Container from "../../components/layout/Container/Container";
 import Header from "../../components/layout/Header/Header";
 import UserBox from "../../components/room/UserBox/UserBox";
 import { userListStyle } from "./WaitingRoomPage.style";
-import { supabase } from "../../libs/supabase";
-import { useId } from "react";
 import { AppContextProvider } from "../../components/chat/ChatApp/ChatApp";
 import Messages from "../../components/chat/Messages/Messages";
 import MessageForm from "../../components/chat/MessageForm/MessageForm";
@@ -57,19 +53,11 @@ export const users = [
 const WaitingRoomPage = () => {
   const navigate = useNavigate();
   const { roomId } = useParams();
-  const channelA = supabase.channel(`${roomId}`);
 
-  function messageReceived(payload: any) {
-    console.log(payload);
-  }
-
-  channelA
-    .on("broadcast", { event: "sync" }, (payload) => messageReceived(payload))
-    .subscribe();
   return (
-    <AppContextProvider>
+    <AppContextProvider roomId={roomId}>
       <Container>
-        <Header>자바스크립트 개고수만 오셈</Header>
+        <Header>{}</Header>
         <div css={userListStyle}>
           {users.map((user) => (
             <UserBox key={user.id} user={user} />

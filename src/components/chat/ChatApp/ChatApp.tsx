@@ -10,7 +10,10 @@ import { supabase } from "../../../libs/supabase";
 
 const AppContext = createContext({});
 
-const AppContextProvider = ({ children }: PropsWithChildren) => {
+const AppContextProvider = ({
+  children,
+  roomId,
+}: PropsWithChildren<{ roomId: string }>) => {
   let myChannel: any = null;
   const [username, setUsername] = useState("");
   const [session, setSession] = useState(null);
@@ -154,7 +157,7 @@ const AppContextProvider = ({ children }: PropsWithChildren) => {
       // .subscribe();
 
       myChannel = supabase
-        .channel("custom-all-channel")
+        .channel(`${roomId}`)
         .on(
           "postgres_changes",
           { event: "*", schema: "public", table: "messages" },
