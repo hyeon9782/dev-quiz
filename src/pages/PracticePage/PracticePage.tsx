@@ -64,7 +64,7 @@ const PracticePage = () => {
     nextStep();
   };
 
-  useCustomBack({ customBack: prevStep });
+  // useCustomBack({ customBack: prevStep });
   return (
     <Container>
       <div css={containerStyle}>

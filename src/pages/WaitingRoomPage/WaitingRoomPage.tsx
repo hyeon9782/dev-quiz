@@ -5,6 +5,8 @@ import Container from "../../components/layout/Container/Container";
 import Header from "../../components/layout/Header/Header";
 import UserBox from "../../components/room/UserBox/UserBox";
 import { userListStyle } from "./WaitingRoomPage.style";
+import { supabase } from "../../libs/supabase";
+import { useId } from "react";
 
 export const users = [
   {
@@ -52,6 +54,15 @@ export const users = [
 const WaitingRoomPage = () => {
   const navigate = useNavigate();
   const { roomId } = useParams();
+  const channelA = supabase.channel(`${roomId}`);
+
+  function messageReceived(payload: any) {
+    console.log(payload);
+  }
+
+  channelA
+    .on("broadcast", { event: "sync" }, (payload) => messageReceived(payload))
+    .subscribe();
   return (
     <Container>
       <Header>자바스크립트 개고수만 오셈</Header>
