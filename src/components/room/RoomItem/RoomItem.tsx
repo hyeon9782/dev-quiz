@@ -5,32 +5,22 @@ import {
   roomItemStyle,
   titleStyle,
 } from "./RoomItem.style";
+import { Room } from "../../../types";
 
 type RoomItemProps = {
-  room: {
-    id: number;
-    title: string;
-    quizType: string;
-    roomType: string;
-    quizPrimaryTopic: string;
-    quizSecondaryTopic: string;
-    currentPersonnel: number;
-    quizPersonnel: number;
-    quizStatus: string;
-    disclosureStatus: string;
-  };
+  room: Room;
 };
 
 const RoomItem = ({ room }: RoomItemProps) => {
   const {
     id,
     title,
-    quizType,
-    roomType,
-    quizSecondaryTopic,
-    currentPersonnel,
-    quizPersonnel,
-    quizStatus,
+    quiz_type,
+    room_type,
+    quiz_secondary_topic,
+    current_personnel,
+    maximum_personnel,
+    room_status,
   } = room;
   const navigate = useNavigate();
   const handleClick = () => {
@@ -40,12 +30,12 @@ const RoomItem = ({ room }: RoomItemProps) => {
     <div css={roomItemStyle} onClick={handleClick}>
       <div css={titleStyle}>{title}</div>
       <div css={badgeBoxStyle}>
-        <div css={badgeStyle}>{quizType}</div>
-        <div css={badgeStyle}>{roomType}</div>
-        <div css={badgeStyle}>{quizSecondaryTopic}</div>
-        <div css={badgeStyle}>{quizStatus}</div>
+        <div css={badgeStyle}>{quiz_type}</div>
+        <div css={badgeStyle}>{room_type}</div>
+        <div css={badgeStyle}>{quiz_secondary_topic}</div>
+        <div css={badgeStyle}>{room_status}</div>
         <div>
-          {currentPersonnel}/{quizPersonnel}
+          {current_personnel}/{maximum_personnel}
         </div>
       </div>
     </div>
