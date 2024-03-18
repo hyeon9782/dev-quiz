@@ -7,6 +7,9 @@ import UserBox from "../../components/room/UserBox/UserBox";
 import { userListStyle } from "./WaitingRoomPage.style";
 import { supabase } from "../../libs/supabase";
 import { useId } from "react";
+import { AppContextProvider } from "../../components/chat/ChatApp/ChatApp";
+import Messages from "../../components/chat/Messages/Messages";
+import MessageForm from "../../components/chat/MessageForm/MessageForm";
 
 export const users = [
   {
@@ -64,21 +67,25 @@ const WaitingRoomPage = () => {
     .on("broadcast", { event: "sync" }, (payload) => messageReceived(payload))
     .subscribe();
   return (
-    <Container>
-      <Header>자바스크립트 개고수만 오셈</Header>
-      <div css={userListStyle}>
-        {users.map((user) => (
-          <UserBox key={user.id} user={user} />
-        ))}
-      </div>
-      <div>
-        <button onClick={() => navigate(`/room/game/${roomId}`)}>
-          시작하기
-        </button>
-      </div>
-      <ChatDisplay />
-      <ChatInput />
-    </Container>
+    <AppContextProvider>
+      <Container>
+        <Header>자바스크립트 개고수만 오셈</Header>
+        <div css={userListStyle}>
+          {users.map((user) => (
+            <UserBox key={user.id} user={user} />
+          ))}
+        </div>
+        <div>
+          <button onClick={() => navigate(`/room/game/${roomId}`)}>
+            시작하기
+          </button>
+        </div>
+        {/* <ChatDisplay />
+        <ChatInput /> */}
+        <Messages />
+        <MessageForm />
+      </Container>
+    </AppContextProvider>
   );
 };
 
