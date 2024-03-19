@@ -10,6 +10,8 @@ import Header from "../../components/layout/Header/Header";
 import { useEffect, useState } from "react";
 import { supabase } from "../../libs/supabase";
 import { Room } from "../../types";
+import { useAtom } from "jotai";
+import { roomAtom } from "../../store/roomAtom";
 
 const RoomsPage = () => {
   const {
@@ -18,7 +20,7 @@ const RoomsPage = () => {
     onClose: onCreateModalClose,
   } = useModal();
 
-  const [rooms, setRooms] = useState<Room[]>([]);
+  const [rooms, setRooms] = useAtom(roomAtom);
 
   const getRooms = async () => {
     const { data, error } = await supabase
