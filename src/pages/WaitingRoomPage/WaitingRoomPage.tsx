@@ -6,6 +6,7 @@ import { userListStyle } from "./WaitingRoomPage.style";
 import { AppContextProvider } from "../../components/chat/ChatApp/ChatApp";
 import Messages from "../../components/chat/Messages/Messages";
 import MessageForm from "../../components/chat/MessageForm/MessageForm";
+import Chat from "../../components/chat/Chat/Chat";
 
 export const users = [
   {
@@ -70,6 +71,7 @@ const WaitingRoomPage = () => {
         </div>
         {/* <ChatDisplay />
         <ChatInput /> */}
+
         <Messages />
         <MessageForm />
       </Container>

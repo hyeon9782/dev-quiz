@@ -128,6 +128,7 @@ const AppContextProvider = ({
     const { data, error } = await supabase
       .from("messages")
       .select()
+      .eq("roomId", roomId)
       .range(0, 49)
       .order("id", { ascending: false });
     // console.log(`data`, data);
@@ -219,6 +220,7 @@ const AppContextProvider = ({
         country: countryCode,
         unviewedMessageCount,
         session,
+        roomId,
       }}
     >
       {children}

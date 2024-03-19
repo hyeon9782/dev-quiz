@@ -3,7 +3,7 @@ import { useAppContext } from "../ChatApp/ChatApp";
 import { supabase } from "../../../libs/supabase";
 
 const MessageForm = () => {
-  const { username, country, session } = useAppContext();
+  const { username, country, session, roomId } = useAppContext();
 
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -20,6 +20,7 @@ const MessageForm = () => {
           text: message,
           username,
           country,
+          roomId,
           is_authenticated: session ? true : false,
         },
       ]);
